@@ -2,662 +2,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product INVENTORY</title>
+    <title>Product Inventory</title>
     <!--css-->
     
+    <body>
+        <h1 class="title-shop">Product Inventory</h1>
+        <main class="main bd-grid">
+            <article class="card">
+                <div class="card__img">
+                    <img src="https://carhartt WIP active jacket" alt="">
+                </div>
+                <div class="card__name">
+                    <p>carhartt WIP active jacket</p>
+                </div>
+                <div class="card__precis">
+                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
+                    
+                    <div>
+                        <span class="card__preci card__preci--before">$119.99</span>
+                        <span class="card__preci card__preci--now">$109.99</span>
+                    </div>
+                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img">
+                    <img src="https://carhartt 5 panel cap.jpg" alt="">
+                </div>
+                <div class="card__name">
+                    <p>carhartt backley 5 pannel cap</p>
+                </div>
+                <div class="card__precis">
+                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
+                    <div>
+                        <span class="card__preci card__preci--before">$51.12.</span>
+                        <span class="card__preci card__preci--now">$49.81</span>
+                    </div>
+                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img">
+                    <img src="https://\carhartt cargo pant.jpg" alt="">
+                </div>
+                <div class="card__name">
+                    <p>carhartt regular cargo pants</p>
+                </div>
+                <div class="card__precis">
+                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
+                    
+                    <div>
+                        <span class="card__preci card__preci--before">$54.99</span>
+                        <span class="card__preci card__preci--now">$54.00</span>
+                    </div>
+                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card__img">
+                    <img src="https://carhart t-shirt.jpg" alt="">
+                </div>
+                <div class="card__name">
+                    <p>carhartt pocket t-shirt</p>
+                </div>
+                <div class="card__precis">
+                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
+                    
+                    <div>
+                        <span class="card__preci card__preci--before">$19.99</span>
+                        <span class="card__preci card__preci--now">$19.00</span>
+                    </div>
+                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
+                </div>
+            </article>
+        </main>
+          <footer>
+            <a href="https://github.com/bedimcode">CR : Bedimcode </a> 
+          </footer>
+        <!-- ICONS -->
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    </body>
+
     <style> 
 /*General styles*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+/*-- VARIABLES CSS--*/
+/*Colores*/
+:root{
+    --first-color: #E3F8FF;
+    --second-color: #DCFAFB;
+    --third-color: #FFE8DF;
+    --accent-color: #FF5151;
+    --dark-color: #161616;
+}
+
+/*Tipografia responsive*/
+:root{
+    --body-font: 'Open Sans';
+    --h1-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.75rem;
+}
+@media screen and (min-width: 768px){
+    :root{
+        --h1-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+/*-- BASE --*/
+*,::after,::before{
     box-sizing: border-box;
 }
-
-header {
-    padding: 40px 10px;
-    background: #fff;
-    color: #333333;
-    font-family: 'Questrial', sans-serif;
-    position: relative;
+body{
+    margin: 2rem 0 0 0;
+    background-color: #fff;
+    color: var(--dark-color);
+    font-family: var(--body-font);
 }
-
-.btn_car {
+h1{
+    font-size: var(--h1-font-size);
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+a{
     text-decoration: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 17px;
-    line-height: 150%;
-    text-align: center;
-    color: #005598;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 5px 5px;
-    -webkit-transition: all 1s;
-    transition: all 1s;
 }
 
-.btn_car span {
-    padding: 0px 5px;
+/*-- LAYAOUT --*/
+.main {
+    padding: 2rem 0;
 }
-
-.btn_car:hover {
-    box-shadow: 0 -100px #005598 inset;
-    color: #fff;
-}
-
-.nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
-    list-style: none;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.nav_link {
-    font-size: 14px;
-    line-height: 150%;
-    text-align: center;
-    color: #333;
-    letter-spacing: 2.8px;
-    text-transform: uppercase;
-    padding: 20px 30px;
-    text-decoration: none;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-}
-
-.nav_link:hover {
-    box-shadow: 0 -100px #005598 inset;
-    color: #fff;
-}
-
-.nav_img {
-    padding: 0 20px;
-}
-
-.nav_img img {
-    width: 370px;
-    height: 150px;
-    margin-bottom: -22px;
-}
-
-
-/*Slide Show style*/
-
-.slide-show {
-    position: relative;
-    padding: 0px 2px;
-    margin: 40px 0;
-    width: 100%;
+.bd-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     max-width: 1200px;
-    margin: 30px auto 0;
-    height: 550px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*-- PAGES --*/
+.title-shop{
+    position: relative;
+    margin: 0 2.5rem;
+}
+.title-shop::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 72px;
+    height: 2px;
+    background-color: var(--dark-color);
+    margin-left: .25rem;
+}
+
+/*-- COMPONENT --*/
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
     overflow: hidden;
 }
-
-.slider-show_item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    opacity: 0;
-    z-index: 1;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
+article:nth-child(1){
+    background-color: var(--first-color);
 }
-
-.slide_img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+article:nth-child(2){
+    background-color: var(--second-color);
 }
-
-.slider-show_item h1 {
-    text-shadow: 2px 2px 4px red;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-    width: 90%;
+article:nth-child(3){
+    background-color: var(--third-color);
+}
+article:nth-child(4){
+    background-color: var(--second-color);
+}
+.card__img{
+    width: 180px;
+    height: auto;
+    padding: 3rem 0;
+    transition: .5s;
+}
+.card__name{
+    position: absolute;
+    left: -25%;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
     text-align: center;
-    padding: 10px;
-    font-family: 'Raleway', sans-serif;
+    background-color: var(--dark-color);
     color: #fff;
-    border-bottom: 5px solid #fff;
-    line-height: 110%;
-    letter-spacing: 150%;
     font-weight: bold;
-    font-size: 70px;
+    transition: .5s;
 }
-
-.slider-show_item a {
-    text-decoration: none;
-    color: #e5392f;
-    font-weight: 900;
-    font-size: 20px;
-    padding: 5px;
-    text-transform: uppercase;
+.card__icon{
+    font-size: 1.5rem;
+    color: var(--dark-color);
 }
-
-.active {
-    opacity: 1;
-    z-index: 2;
+.card__icon:hover{
+    color: var(--accent-color);
 }
-
-
-/*    Pause control slideshow*/
-
-.control_container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-}
-
-.control {
-    font-family: 'Raleway', sans-serif;
-    background: #fff;
-    color: #333;
-    border: 1px solid #333;
-    padding: 10px 40px;
-    text-transform: uppercase;
-}
-
-.control:hover {
-    color: #fff;
-    background: #333;
-    border: 1px solid #fff;
-}
-
-
-/*orizontal rule*/
-
-hr {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0;
-    border: none;
-    border-top: medium double #333;
-    color: #333;
-    text-align: center;
-}
-
-hr:after {
-    content: "§";
-    display: inline-block;
-    position: relative;
-    top: -0.7em;
-    font-size: 1.5em;
-    padding: 0 0.25em;
-    background: white;
-}
-
-
-/*Products section */
-
-.product {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-
-.product_item {
-    position: relative;
-    margin: 20px 0px;
-    width: 350px;
-    height: 440px;
-    overflow: hidden;
-    -webkit-transition: all 2s;
-    transition: all 2s;
-}
-
-.product_item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.product_container {
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.6);
+.card__precis{
     width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-}
-
-.product_tittle {
-    color: #fff;
-    line-height: 150%;
-    padding: 20px 30px;
-    text-align: center;
-}
-
-.product_tittle span {
-    display: block;
-    margin-top: 20px;
-}
-
-.view_more {
-    padding: 20px;
-    color: #fff;
-}
-
-.product_item:hover .product_container {
-    opacity: 1;
-}
-
-footer {
-    background: #fff;
-    color: #a5a5a5;
-}
-
-.footer_overlay {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -ms-flex-line-pack: center;
-    align-content: center;
-}
-
-.footermenu {
-    width: 24%;
-    padding: 20px;
-}
-
-.footermenu h3 {
-    margin-bottom: 10px;
-    padding: 5px 5px;
-    ;
-    border: 2px solid #a5a5a5;
-    border-left: none;
-    border-right: none;
-}
-
-.footermenu p {
-    padding: 10px 0;
-    margin-bottom: 10px;
-}
-
-.footermenu .payment {
-    padding: 10px;
-    font-size: 40px;
-    text-align: center;
-    line-height: 35px;
-}
-
-.payment span {
-    padding: 0 10px;
-    color: #a5a5a5;
-}
-
-.copy {
-    margin-top: 40px;
-    background: #f1f1f1;
-    color: #bebebe;
-}
-
-.copy_overlay {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 20px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-transform: uppercase;
+    align-items: flex-end;
+    transition: .5s;
+}
+.card__preci{
+    display: block;
+    text-align: center;
+}
+.card__preci--before{
+    font-size: var(--smaller-font-size);
+    color: var(--accent-color);
+    margin-bottom: .25rem;
+}
+.card__preci--now{
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+}
+/*Move left*/
+.card:hover{
+    box-shadow: 0 .5rem 1rem #D1D9E6;
+}
+.card:hover .card__name{
+    left: 0;
+}
+.card:hover .card__img{
+    transform: rotate(30deg);
+    margin-left: 3.5rem;
+}
+.card:hover .card__precis{
+    margin-left: 3.5rem;
+    padding: 0 1.5rem;
 }
 
-.social {
-    font-size: 30px;
-    line-height: 25px;
+/*-- FOOTER --*/
+
+footer{
+  text-align: center;
 }
 
-.social a {
-    text-decoration: none;
-    color: #bebebe;
-    margin-right: 10px;
-    padding: 0px;
-    border-radius: 50%;
-}
-
-.social a:hover {
-    color: #f1f1f1;
-    background: #bebebe;
-}
-
-
-/*Media querys*/
-
-@media (max-width: 750px) {
-    .nav ul {
-        margin-top: 20px;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        padding: 5px;
+/*-- MEDIA QUERIES --*/
+@media screen and (min-width: 1200px){
+    body{
+        margin: 3rem 0 0 0;
     }
-    .nav_img {
-        display: block;
-        width: 100%;
-        padding: 2px;
-        margin-bottom: 20px;
+    .title-shop{
+        margin: 0 5rem;
     }
-    .nav_img img {
-        width: 100%;
-    }
-    .nav_link {
-        display: block;
-    }
-    .slide-show{
-        margin: 0 auto;
-        padding-bottom: 0;
-        height: 400px;
-    }
-    .slider-show_item {
-        height: 400px;
-    }
-    .control {
-        width: 30%;
-        text-align: center;
-        padding: 4px;
-    }
-    hr {
-        margin-top:;
-    }
-    .slider-show_item h1 {
-        font-size: 30px;
-    }
-    .slider-show_item a {
-        font-size: 16px;
-    }
-    .product_container {
-        opacity: 1;
-    }
-    .footer_overlay {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-    .footermenu {
-        width: 100%;
-    }
-    .copy_overlay {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-    .social {
-        margin-top: 20px;
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
     }
 }
-
-</style>
-</head>
-<body>
-    <meta charset="UTF-8">
-    <!--    Most esencial meta tag-->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="description" content="Product site ,  part of the 30 days 30 days sites chalenges, Day 4 od 30 ">
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@leamsigc">
-    <meta name="twitter:title" content="Portfolio hinoyog">
-    <meta name="twitter:description" content="web developer ,Desing and Freelancer . Ismael Garcia ,San Juan Quiahije ,Portfolio Web ">
-    <meta name="twitter:creator" content="@leamsigc">
-
-    <meta name="twitter:image" content="https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.0-9/13226687_10153506169836109_8688577730471658699_n.jpg?oh=de0cfddfb7fa2047dedaf23a9a6777d3&oe=598C0101">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="Ismael Garcia" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://leamsigc.github.io/leamsigc/" />
-    <meta property="og:image" content="https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.0-9/13226687_10153506169836109_8688577730471658699_n.jpg?oh=de0cfddfb7fa2047dedaf23a9a6777d3&oe=598C0101" />
-    <meta property="og:description" content="Product site ,  part of the 30 days 30 days sites chalenges, Day 4 od 30" />
-    <meta property="og:site_name" content="Ismael Garcia Web Developer" />
-    <meta property="fb:admins" content="673166108" />
-    <!--meta tag -->
-    <title>Product site </title>
-    <!--    meta view port -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!--   custom css-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!--    fontastic  font icon -->
-    <link href="https://file.myfontastic.com/7Z2kTjtbwuGmJnwLFv2jTK/icons.css" rel="stylesheet">
-    <!--google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Questrial|Raleway:700" rel="stylesheet">
-
-</head>
-
-<body>
-    <header>
-        <a href="#" class="btn_car">
-           View Cart (0 items)
-           <span class="icon-caddie-shopping-streamline"></span>
-           <span class="icon-buy-sign"></span>
-       </a>
-        <nav class="nav">
-            <ul>
-                <li><a href="" class="nav_link">Shop</a></li>
-                <li><a href="" class="nav_link"></a></li>
-                <li>
-                    <a href="" class="nav_img"><img src="https://cdn.shopify.com/s/files/1/0188/3162/t/4/assets/logo.png?4171280709707906975" alt="Logo ADA BLACKJACKS"></a>
-                </li>
-                <li><a href="" class="nav_link">Reports</a></li>
-                <li><a href="" class="nav_link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!--   header end-->
-    <!--  slider show star-->
-    <div class="slide-show" id="slides_js">
-        <!--      slider Show Items -->
-        <div class="slider-show_item ">
-            <img class="slide_img" src="https://source.unsplash.com/unG80SBSfMU/1100x600" alt="">
-            <h1>CAREFULLY CRAFTED</h1>
-            <a href="">Read About Us</a>
-        </div>
-        <div class="slider-show_item">
-            <img class="slide_img " src="https://source.unsplash.com/X62F1WQhuLI/1200x900" alt="">
-            <h1>GLORIOUS IT IS WHEN WANDERING TIME IS COME</h1>
-            <a href="">Read About Us</a>
-        </div>
-        <div class="slider-show_item ">
-            <img class="slide_img " src="https://source.unsplash.com/BaMHwcH2RUk/1200x900" alt="">
-
-        </div>
-        <div class="slider-show_item active ">
-            <img class="slide_img " src="https://source.unsplash.com/LNwn_A9RGHo/1200x900" alt="">
-            <h1>GLORIOUS IT IS WHEN WANDERING TIME IS COME</h1>
-            <a href="">Read About Us</a>
-        </div>
-    </div>
-    <!--    Puase button for the slideshow-->
-    <div class="control_container">
-        <button class="control" id="previous">Previous</button>
-        <button class="control" id="pause">Pause</button>
-        <button class="control" id="next">Next</button>
-    </div>
-    <!--   hr rule-->
-    <hr>
-    <!--   Poduct section -->
-    <section class="product">
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack. DARK GREY <br> <span>&euro; 199.00</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item two-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack. DARK GREY <br> <span>&euro; 129.99</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item 3-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 -Backpack. DARK GREY <br> <span>&euro; 99.90</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item 4-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 -Backpack. DARK GREY <br> <span>&euro; 459.00</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item 5-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 -Backpack. DARK GREY <br> <span>&euro; 233.90</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item 6-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack. DARK GREY <br> <span>&euro; 355.00</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack. DARK GREY <br> <span>&euro; 199.00</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item two-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack. DARK GREY <br> <span>&euro; 129.99</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-        <!--        item 3-->
-        <div class="product_item">
-            <img src="" alt="bag one">
-            <div class="product_container">
-                <a href="" class="product_tittle">NO. 2 - Backpack DARK GREY <br> <span>&euro; 99.90</span></a>
-                <a href="" class="view_more">VIEW MORE</a>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="footer_overlay">
-            <div class="footermenu">
-                <h3>PAYMENT INFO</h3>
-                <div class="payment">
-                    <span class="icon-cc-visa"></span>
-                    <span class="icon-cc-mastercard"></span>
-                    <span class="icon-cc-paypal"></span>
-                </div>
-            </div>
-            <div class="footermenu">
-                <h3>TERMS &amp; CONDITIONS</h3>
-                <p>We ship worldwide with the Spanish postal service .All packages will be sent
-                    <a href="#">Read more</a>
-            </div>
-            <div class="footermenu">
-                <h3>NEWS &amp; UPDATES</h3>
-                <p>For our new and updates please follow us on <a href="#">Tumblr</a> blog, subscribe on <a href="#">Facebook</a> or follow us on <a href="#">Twitter</a>.</p>
-            </div>
-            <div class="footermenu">
-                <h3>CONTACT</h3>
-                <p>If you have any questions or inquiries about our products, please send us an email: hello@onetwo.com .We'd love to hear from you!.</p>
-            </div>
-        </div>
-        <div class="copy">
-            <div class="copy_overlay">
-                <p>Copyrigh&copy; adablackjack</p>
-                <div class="social">
-                    <a href="#"><span class="icon-facebook-circled"></span></a>
-                    <a href="#"><span class="icon-tumblr-circled"></span></a>
-                    <a href="#"><span class="icon-pinterest-circled"></span></a>
-                    <a href="#"><span class="icon-twitter-circle"></span></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--   custom js-->
-    <script src="js/main.js"></script>
-</body>
-</html>
