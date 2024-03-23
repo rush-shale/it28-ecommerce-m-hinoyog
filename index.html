@@ -1,272 +1,132 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Inventory</title>
-    <!--css-->
-    
-    <body>
-        <h1 class="title-shop">Product Inventory</h1>
-        <main class="main bd-grid">
-            <article class="card">
-                <div class="card__img">
-                    <img src="https://carhartt WIP active jacket" alt="">
-                </div>
-                <div class="card__name">
-                    <p>carhartt WIP active jacket</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before">$119.99</span>
-                        <span class="card__preci card__preci--now">$109.99</span>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            padding-top: 4rem;
+        }
+
+        .product-card {
+            border: 1px solid #8d9194;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            background-color: #889097;
+            padding: 1rem;
+            overflow-y: auto;
+            width: 300px;
+            border-left: 1px solid #a4a7aa;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #96999c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">product-card</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Products</h2>
+                <div class="row">
+                    <!-- Product Cards -->
+                    <div class="col-md-4">
+                        <div class="product-card">
+                            <img src="carhart t-shirt.jpg">
+                            <div class="card-body">
+                                <h5 class="card-title">carhartt t-shirt</h5>
+                                <p class="card-text">$19.99</p>
+                                <button class="btn btn-primary" onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                   
+                                                                        </div>
+
+            <!-- Cart Sidebar -->
+            <div class="col-md-4">
+                <div class="cart-sidebar">
+                    <h2>Shopping Cart</h2>
+                    <div id="cart-items">
+                        <!-- Cart items will be added dynamically here -->
                     </div>
-                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card__img">
-                    <img src="https://carhartt 5 panel cap.jpg" alt="">
-                </div>
-                <div class="card__name">
-                    <p>carhartt backley 5 pannel cap</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
-                    <div>
-                        <span class="card__preci card__preci--before">$51.12.</span>
-                        <span class="card__preci card__preci--now">$49.81</span>
+                    <hr>
+                    <div class="text-end">
+                        <h5>Total: <span id="cart-total">$0.00</span></h5>
+                        <button class="btn btn-success" onclick="checkout()">Checkout</button>
+                        <a href="payment&accounting.html" class="btn btn-primary">Buy</a>
                     </div>
-                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
                 </div>
-            </article>
+            </div>
+        </div>
+    </main>
 
-            <article class="card">
-                <div class="card__img">
-                    <img src="https://\carhartt cargo pant.jpg" alt="">
-                </div>
-                <div class="card__name">
-                    <p>carhartt regular cargo pants</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before">$54.99</span>
-                        <span class="card__preci card__preci--now">$54.00</span>
-                    </div>
-                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-            </article>
+    <!-- Bootstrap Bundle (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-            <article class="card">
-                <div class="card__img">
-                    <img src="https://carhart t-shirt.jpg" alt="">
-                </div>
-                <div class="card__name">
-                    <p>carhartt pocket t-shirt</p>
-                </div>
-                <div class="card__precis">
-                    <a href="" class="card__icon" ><ion-icon name="heart-outline"></ion-icon></a>
-                    
-                    <div>
-                        <span class="card__preci card__preci--before">$19.99</span>
-                        <span class="card__preci card__preci--now">$19.00</span>
-                    </div>
-                    <a href="" class="card__icon"><ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-            </article>
-        </main>
-          <footer>
-            <a href="https://github.com/bedimcode">CR : Bedimcode </a> 
-          </footer>
-        <!-- ICONS -->
-        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    </body>
+    <script>
+        // Function to add items to the shopping cart
+        function addToCart(name, price) {
+            // Create a new cart item element
+            var cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = "<h5>" + name + "</h5><p>$" + price.toFixed(2) + "</p>";
 
-    <style> 
-/*General styles*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+            // Append the cart item to the cart
+            document.getElementById("cart-items").appendChild(cartItem);
 
-/*-- VARIABLES CSS--*/
-/*Colores*/
-:root{
-    --first-color: #E3F8FF;
-    --second-color: #DCFAFB;
-    --third-color: #FFE8DF;
-    --accent-color: #FF5151;
-    --dark-color: #161616;
-}
+            // Update the total price
+            updateTotal(price);
+        }
 
-/*Tipografia responsive*/
-:root{
-    --body-font: 'Open Sans';
-    --h1-font-size: 1.5rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --smaller-font-size: 0.75rem;
-}
-@media screen and (min-width: 768px){
-    :root{
-        --h1-font-size: 2rem;
-        --normal-font-size: 1rem;
-        --smaller-font-size: 0.813rem;
-    }
-}
+        // Function to update the total price of the cart
+        function updateTotal(price) {
+            // Get the current total
+            var currentTotal = parseFloat(document.getElementById("cart-total").innerText.substring(1));
 
-/*-- BASE --*/
-*,::after,::before{
-    box-sizing: border-box;
-}
-body{
-    margin: 2rem 0 0 0;
-    background-color: #fff;
-    color: var(--dark-color);
-    font-family: var(--body-font);
-}
-h1{
-    font-size: var(--h1-font-size);
-}
-img{
-    max-width: 100%;
-    height: auto;
-}
-a{
-    text-decoration: none;
-}
+            // Calculate the new total
+            var newTotal = currentTotal + price;
 
-/*-- LAYAOUT --*/
-.main {
-    padding: 2rem 0;
-}
-.bd-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    max-width: 1200px;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    align-items: center;
-    gap: 2rem;
-}
+            // Update the total price display
+            document.getElementById("cart-total").innerText = "$" + newTotal.toFixed(2);
+        }
 
-/*-- PAGES --*/
-.title-shop{
-    position: relative;
-    margin: 0 2.5rem;
-}
-.title-shop::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 72px;
-    height: 2px;
-    background-color: var(--dark-color);
-    margin-left: .25rem;
-}
-
-/*-- COMPONENT --*/
-.card{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
-    overflow: hidden;
-}
-article:nth-child(1){
-    background-color: var(--first-color);
-}
-article:nth-child(2){
-    background-color: var(--second-color);
-}
-article:nth-child(3){
-    background-color: var(--third-color);
-}
-article:nth-child(4){
-    background-color: var(--second-color);
-}
-.card__img{
-    width: 180px;
-    height: auto;
-    padding: 3rem 0;
-    transition: .5s;
-}
-.card__name{
-    position: absolute;
-    left: -25%;
-    top: 0;
-    width: 3.5rem;
-    height: 100%;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-align: center;
-    background-color: var(--dark-color);
-    color: #fff;
-    font-weight: bold;
-    transition: .5s;
-}
-.card__icon{
-    font-size: 1.5rem;
-    color: var(--dark-color);
-}
-.card__icon:hover{
-    color: var(--accent-color);
-}
-.card__precis{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    transition: .5s;
-}
-.card__preci{
-    display: block;
-    text-align: center;
-}
-.card__preci--before{
-    font-size: var(--smaller-font-size);
-    color: var(--accent-color);
-    margin-bottom: .25rem;
-}
-.card__preci--now{
-    font-size: var(--h3-font-size);
-    font-weight: bold;
-}
-/*Move left*/
-.card:hover{
-    box-shadow: 0 .5rem 1rem #D1D9E6;
-}
-.card:hover .card__name{
-    left: 0;
-}
-.card:hover .card__img{
-    transform: rotate(30deg);
-    margin-left: 3.5rem;
-}
-.card:hover .card__precis{
-    margin-left: 3.5rem;
-    padding: 0 1.5rem;
-}
-
-/*-- FOOTER --*/
-
-footer{
-  text-align: center;
-}
-
-/*-- MEDIA QUERIES --*/
-@media screen and (min-width: 1200px){
-    body{
-        margin: 3rem 0 0 0;
-    }
-    .title-shop{
-        margin: 0 5rem;
-    }
-    .bd-grid{
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
+        // Function to simulate checkout process
+        function checkout() {
+            // Placeholder function to simulate checkout process
+            alert("Checkout completed!");
+        }
+    </script>
+</body>
+</html>

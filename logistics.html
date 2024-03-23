@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 4rem;
+        }
+
+        .info-card {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Arrival Tracking -->
+                <div class="info-card">
+                    <h2>Arrival Tracking</h2>
+                    <p>Enter the tracking code of the item to track its arrival.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="arrivalCode" class="form-label">Tracking Code:</label>
+                            <input type="text" class="form-control" id="arrivalCode" placeholder="Enter tracking code">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Track Arrival</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <!-- Departure Tracking -->
+                <div class="info-card">
+                    <h2>Departure Tracking</h2>
+                    <p>Enter the tracking code of the item to track its departure.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="departureCode" class="form-label">Tracking Code:</label>
+                            <input type="text" class="form-control" id="departureCode" placeholder="Enter tracking code">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Track Departure</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <!-- Shipping Products -->
+                <div class="info-card">
+                    <h2>Shipping Products</h2>
+                    <p>Enter the product code of the item to initiate shipping.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="productCode" class="form-label">Product Code:</label>
+                            <input type="text" class="form-control" id="productCode" placeholder="Enter product code">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ship Product</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <!-- Delivery Success -->
+                <div class="info-card">
+                    <h2>Delivery Success</h2>
+                    <p>Enter the tracking code of the delivered item to mark the delivery as successful.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="deliveryCode" class="form-label">Tracking Code:</label>
+                            <input type="text" class="form-control" id="deliveryCode" placeholder="Enter tracking code">
+                        </div>
+                        <button type="submit" class="btn btn-success">Mark Delivery Successful</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Logistics</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to handle marking delivery as successful
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('deliveryForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var deliveryCode = document.getElementById('deliveryCode').value;
+                // Here you can implement logic to mark delivery as successful and update the tracking status
+                alert('Delivery of item with tracking code ' + deliveryCode + ' marked as successful.');
+                // For demonstration purposes, we're just showing an alert message
+            });
+        });
+    </script>
+</body>
+</html>
